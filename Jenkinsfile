@@ -6,10 +6,10 @@ pipeline{
                 sh "mvn clean package"
             }
         }
-        stage('Deploy'){
+         stage('Deploy'){
             steps{
-                deploy adapters: [tomcat7(credentialsId: '3c7715c5-eb8a-48d1-ab79-aef1b35753be', path: '',
-                url: 'http://ec2-18-217-141-92.us-east-2.compute.amazonaws.com:8080/')], 
+                deploy adapters: [tomcat7(credentialsId: '6c6df49f-cace-4300-96c6-52ea4c185853', path: '',
+                url: 'http://ec2-65-2-169-133.ap-south-1.compute.amazonaws.com:8080/')],
                 contextPath: 'javawebapp', war: '**/java-web-project.war'
             }
         }
